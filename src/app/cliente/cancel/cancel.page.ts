@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { SchedulingService } from 'src/app/models/service/scheduling.service';
 
 @Component({
   selector: 'app-cancel',
@@ -7,14 +8,21 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./cancel.page.scss'],
 })
 export class CancelPage implements OnInit {
+  id = localStorage.getItem('id_client');
 
-  constructor(private modalCtrl: ModalController) { }
+  schedulings: any = [];
+  constructor(private modalCtrl: ModalController, private service: SchedulingService) { }
 
   ngOnInit() {
+    this.service.getAll().subscribe(response => {
+      this.schedulings = response;
+      console.log(this.schedulings)
+
+    });
   }
 
-  fecharModal():void {
+  fecharModal(): void {
     this.modalCtrl.dismiss();
-  
+
   }
 }

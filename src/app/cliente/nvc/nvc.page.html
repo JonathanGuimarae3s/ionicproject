@@ -1,54 +1,77 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-buttons>
       <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
       <ion-title>Novos Cursos</ion-title>
-  </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<ion-content color="dark" class="ion-padding">
+  <div>
+    <ion-text>
+      <h2>Bem-vindo à nossa Página de Novos Cursos</h2>
+    </ion-text>
+    <p>
+      Descubra oportunidades incríveis para avançar na sua carreira com os
+      cursos oferecidos por nossos parceiros de renome. Aqui, você encontrará
+      uma seleção de cursos atualizados e relevantes, projetados para
+      impulsionar seu desenvolvimento profissional.
+    </p>
+  </div>
+  <div>
+    <ion-text>
+      <h3>Por que escolher os cursos dos nossos parceiros?</h3>
+    </ion-text>
+    <p>
+      Parceria com as melhores empresas da indústria. Cursos ministrados por
+      especialistas comprovados. Conteúdo sempre atualizado para acompanhar o
+      mercado em constante evolução.
+    </p>
+  </div>
+  <div>
+    <ion-text>
+      <h3>Destaques dos Cursos</h3>
+    </ion-text>
+    <p>
+      Explore nossa lista de cursos recentes e apaixonantes, cuidadosamente
+      selecionados para você. Desde habilidades técnicas até liderança e gestão,
+      há algo para todos.
+    </p>
+  </div>
+  <div>
+    <ion-text>
+      <h3>Benefícios para Você</h3>
+    </ion-text>
+    <p>Ao escolher os cursos de nossos parceiros, você pode:</p>
+    <ul>
+      <li>Desenvolver habilidades valiosas.</li>
+      <li>Avançar em sua carreira.</li>
+      <li>Ficar à frente da concorrência no mercado de trabalho.</li>
+    </ul>
 
-
-<ion-content>
-
-  <ion-card>
-    <img alt="Silhouette of mountains" src="assets/senac.jpg" />
-    <ion-card-header>
-      <ion-card-title>Barbeiro</ion-card-title>
-      <ion-card-subtitle>Você marcou uma visita para o dia 30/10/2023</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-  Estamos te aguardando no Senac de Nova Iguaçu. Até lá!!  </ion-card-content>
-  </ion-card>
-
-  <ion-content>
-
-    <ion-card>
-      <img alt="Silhouette of mountains" src="assets/senac.jpg" />
-      <ion-card-header>
-        <ion-card-title>Barbeiro</ion-card-title>
-        <ion-card-subtitle>Você marcou uma visita para o dia 30/10/2023</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-    Estamos te aguardando no Senac de Nova Iguaçu. Até lá!!  </ion-card-content>
+    <ion-card class="div">
+      <ion-grid class="div2">
+        <div id="card3">
+          <ion-row>
+            <ion-col push-sm="6" class="col"
+              ><a href="https://www.rj.senac.br/cursos" target="_blank"
+                ><img src="assets/senac-logo.png" alt="" width="100px"
+              /></a>
+              <br />
+            </ion-col>
+            <ion-col push-sm="6" class="col"
+              ><img src="assets/logo_casamenor2.png" alt="" width="130px"
+            /></ion-col>
+            <br />
+          </ion-row>
+          <ion-row>
+            <ion-col push-sm="12" class="col"
+              ><img src="assets/logo_embelleze.avif" alt="" width="150px"
+            /></ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
     </ion-card>
-    </ion-content>
-
-    <ion-content>
-
-      <ion-card>
-        <img alt="Silhouette of mountains" src="assets/senac.jpg" />
-        <ion-card-header>
-          <ion-card-title>Barbeiro</ion-card-title>
-          <ion-card-subtitle>Você marcou uma visita para o dia 30/10/2023</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-      Estamos te aguardando no Senac de Nova Iguaçu. Até lá!!  </ion-card-content>
-      </ion-card>
-    
-      </ion-content>
-   
-  </ion-content>
+  </div>
+</ion-content>

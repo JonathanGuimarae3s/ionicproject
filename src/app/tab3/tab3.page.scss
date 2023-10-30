@@ -1,83 +1,92 @@
 .unread-indicator {
-    background: var(--ion-color-primary);
-  
-    width: 10px;
-    height: 10px;
-  
-    border-radius: 100%;
-  
-    position: absolute;
-  
-    inset-inline-start: 12px;
-    top: 12px;
-  }
-  
-  .metadata-end-wrapper {
-    position: absolute;
-  
-    top: 10px;
-    inset-inline-end: 10px;
-  
-    font-size: 0.8rem;
-  
-    display: flex;
-    align-items: center;
-  }
-  
-  ion-label strong {
-    display: block;
-  
-    max-width: calc(100% - 60px);
-  
-    overflow: hidden;
-  
-    text-overflow: ellipsis;
-  }
-  
-  ion-label ion-note {
-    font-size: 0.9rem;
-  }
+  background: var(--ion-color-primary);
 
-  .iframe-wrapper iframe{
-    width: 100%;
-    height: 100%;
+  width: 10px;
+  height: 10px;
+
+  border-radius: 100%;
+
+  position: absolute;
+
+  inset-inline-start: 12px;
+  top: 12px;
 }
-.div{
-  background-color: #2E3D58 ;
+
+#msg {
+  text-align: center;
 }
-.col{
-    
+
+.metadata-end-wrapper {
+  position: absolute;
+
+  top: 10px;
+  inset-inline-end: 10px;
+
+  font-size: 0.8rem;
+
+  display: flex;
+  align-items: center;
+}
+
+ion-label strong {
+  display: block;
+
+  max-width: calc(100% - 60px);
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+ion-label ion-note {
+  font-size: 0.9rem;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.div {
+  background-color: #2E3D58;
+}
+
+.col {
+
   text-align: center;
   border: none;
- 
-  
-  }
-  .central{
-   
-    text-align: center;
-    margin: 20px 10px 20px 10px ;
-    border: 15px;
-   border-radius: 150px;
-  }
-  .t{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 22px;
-    font-style: normal;
- 
- }
 
- #card2{
+
+}
+
+.central {
+
+  text-align: center;
+  margin: 20px 10px 20px 10px;
+  border: 15px;
+  border-radius: 150px;
+}
+
+.t {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 22px;
+  font-style: normal;
+
+}
+
+#card2 {
   background-color: #191b27;
   text-align: center;
   justify-items: center;
   background-size: cover;
 }
 
-.div{
-  background-color: #2E3D58 ;
+.div {
+  background-color: #2E3D58;
 }
-.div{
-    
-  background-color: #2E3D58 ;
+
+.div {
+
+  background-color: #2E3D58;
 
 }

@@ -1,46 +1,45 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header translucent="true">
+  <ion-toolbar color="dark">
     <ion-buttons>
       <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
-    <ion-title>Cadastro de Cliente</ion-title>
-      
-  </ion-buttons>
+      <ion-title>Cadastro de Cliente</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-text-center">
+<ion-content class="ion-text-center" color="dark">
   <ion-grid class="ion-no-padding">
-    <ion-row justify-content-center align-items-center style="height: 100vh;">
+    <ion-row justify-content-center align-items-center style="height: 100vh">
       <ion-col size="12" size-md="8" size-lg="6">
-        <form #f="ngForm" (ngSubmit)="salvarCliente(f)">
+        <form (ngSubmit)="salvarCliente(f)" #f="ngForm">
           <ion-list>
-            <ion-item>
-              <ion-label position="stacked">Nome do Cliente</ion-label>
+            <ion-item color="dark">
+              <ion-label class="ion-text-white" position="stacked">Nome do Cliente</ion-label>
               <ion-input type="text" name="nameClient" [(ngModel)]="datas.nameClient" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-label position="stacked">Responsável</ion-label>
+            <ion-item color="dark">
+              <ion-label class="ion-text-white" position="stacked">Responsável</ion-label>
               <ion-input type="text" name="responsible" [(ngModel)]="datas.responsible" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-label position="stacked">Idade</ion-label>
+            <ion-item color="dark">
+              <ion-label class="ion-text-white" position="stacked">Idade</ion-label>
               <ion-input type="number" name="age" [(ngModel)]="datas.age" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-label position="stacked">Telefone Celular</ion-label>
+            <ion-item color="dark">
+              <ion-label class="ion-text-white" position="stacked">Telefone Celular</ion-label>
               <ion-input type="tel" name="phoneNumber" [(ngModel)]="datas.phoneNumber" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-label position="stacked">Email</ion-label>
+            <ion-item color="dark">
+              <ion-label class="ion-text-white" position="stacked">Email</ion-label>
               <ion-input type="email" name="email" [(ngModel)]="datas.email" required></ion-input>
             </ion-item>
 
-            <ion-item>
-              <ion-label position="stacked">Senha</ion-label>
+            <ion-item color="dark">
+              <ion-label class="ion-text-white" position="stacked">Senha</ion-label>
               <ion-input type="password" name="password" [(ngModel)]="datas.password" required></ion-input>
             </ion-item>
           </ion-list>
@@ -50,4 +49,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>

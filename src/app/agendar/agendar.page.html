@@ -6,85 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-
-
-
-<ion-content [fullscreen]="true">
-  
-  <form>
-  
-    <ion-item>
-     
-     
-      <ion-label position="floating">Nome</ion-label>
-      <ion-input  name="nome"></ion-input>
-    
-    
-    
-    
-    </ion-item>
-    <ion-item>
-   
-   
-   
-      <ion-label position="floating">E-mail</ion-label>
-      <ion-input  name="email"></ion-input>
-  
-  
-    </ion-item>
-    <ion-item>
-  
-  
-  
-      <ion-label position="floating">Telefone</ion-label>
-
-
-      <ion-input  name="cpf" ></ion-input>
-
-      
-      
-        </ion-item>
-   
-        <br>
-
-    <br>
-
-    <ion-list>
-      <ion-item>
-        <ion-select placeholder="Select a Fruit">
-          <div slot="label">Selecione o serviço <ion-text ></ion-text></div>
-          <ion-select-option value="apple">Cabeleireiro</ion-select-option>
-          <ion-select-option value="banana">Maquiagem</ion-select-option>
-          <ion-select-option value="orange">Limpeza de pele</ion-select-option>
-          <ion-select-option value="orange">Desing de Sobrancelhas</ion-select-option>
-          <ion-select-option value="orange">Depilação</ion-select-option>
-        </ion-select>
-
-      </ion-item>
-
-    </ion-list>
-
-
- 
-
-   
- 
-
- <ion-item class="t">
-  <ion-label position="floating">Data e Hora</ion-label>
-
-  <ion-datetime locale="pt-BR" minuteValues="0,15,30,45" dayValues="3,5,6,8,10,12,13,16,18,19,22,24,25,27,28" [isDateEnabled]="isWeekday" >
-      <span slot="title"></span>
-    </ion-datetime>
-  </ion-item>
-  <br>
-
-    <ion-button color="dark"  class="btn"  expand="block" type="submit" (click)="presentAlert()">Agendar</ion-button>
-
-  </form>
-
-=======
-<ion-content>
+<ion-content color="dark">
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-md="6" size-lg="4" *ngFor="let curso of cursos">
@@ -93,21 +15,17 @@
             <ion-card-title>{{curso.nameLesson}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <p><strong>Período:{{curso.period}}</strong></p>
-            <p><strong>Horário de Início:{{curso.startTime}}</strong></p>
-            <p><strong>Horário de Término:{{curso.endTime}}</strong></p>
-            <p><strong>Professor Responsável:{{curso.professor}}</strong></p>
-            <p><strong>Vagas Disponíveis:{{curso.students}}</strong></p>
+            <p><strong>Período: {{curso.period}}</strong></p>
+            <p><strong>Horário de Início: {{curso.startTime}}</strong></p>
+            <p><strong>Horário de Término: {{curso.endTime}}</strong></p>
+            <p><strong>Professor Responsável: {{curso.professor}}</strong></p>
+            <p><strong>Vagas Disponíveis: {{curso.students}}</strong></p>
           </ion-card-content>
-          <ion-button expand="full"
-
-            (click)="agendar(curso)"
+          <ion-button expand="full" (click)="agendar(curso)"
             >Agendar</ion-button
           >
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
-  
 </ion-content>

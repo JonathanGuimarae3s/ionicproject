@@ -1,14 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons>
-      <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
-    <ion-title>Login</ion-title>
-
-  </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
-  <form (ngSubmit)="login(f)" #f="ngForm">
+  <video id="background-video" autoplay loop muted playsinline>
+    <source src="../assets/video.mp4" type="video/mp4" />
+  </video>
+  <form class="login-form" (ngSubmit)="login(f)" #f="ngForm">
+    <h1>Login</h1>
+    <div *ngIf="msg">
+      <ion-text color="danger">
+        <p id="msg">{{msg}}</p>
+      </ion-text>
+    </div>
     <ion-item>
       <ion-label position="floating">E-mail</ion-label>
       <ion-input
@@ -30,5 +30,13 @@
     </ion-item>
 
     <ion-button expand="full" type="submit">Entrar</ion-button>
+
+    <ion-button
+      color="light "
+      (click)="fecharModal()"
+      expand="full"
+      type="submit"
+      >Voltar</ion-button
+    >
   </form>
 </ion-content>

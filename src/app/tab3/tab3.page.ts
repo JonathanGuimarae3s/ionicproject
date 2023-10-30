@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavParams } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { AgendamentosPage } from '../cliente/agendamentos/agendamentos.page';
@@ -9,17 +9,34 @@ import { LembretesPage } from '../cliente/lembretes/lembretes.page';
 import { NvcPage } from '../cliente/nvc/nvc.page';
 import { CadastroPage } from '../cadastro/cadastro.page';
 import { LoginPage } from '../login/login.page';
+import { ClientService } from '../models/service/client.service';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
-  item;
+export class Tab3Page implements OnInit {
+  client: any;
+  item: any;
   url: any;
+  msg: any;
+  constructor(private domSanitizer: DomSanitizer, private menuCtrl: MenuController, private navCtrl: NavController, private modalCtrl: ModalController, private service: ClientService, private route: ActivatedRoute, private router: Router) {
+    this.msg = this.route.snapshot.paramMap.get('msg') ? '' : this.route.snapshot.paramMap.get('msg');
 
-  constructor(private domSanitizer: DomSanitizer, private menuCtrl: MenuController, private navCtrl: NavController, private modalCtrl: ModalController) {
-    this.item = localStorage.getItem('client_id')
+  }
+  sair() {
+    localStorage.removeItem('client_id');
+    this.router.navigate(['/tabs/tab1']);
+  }
+  ngOnInit(): void {
+    this.item = localStorage.getItem('client_id');
+
+    if (this.item) {
+      this.service.getUser(this.item).subscribe(response => {
+        this.client = response;
+      })
+    }
   }
 
   cadastro() {
@@ -83,7 +100,10 @@ export class Tab3Page {
     )
 
   }
+  fecharModal(): void {
+    this.modalCtrl.dismiss();
 
+  }
 
 }
 

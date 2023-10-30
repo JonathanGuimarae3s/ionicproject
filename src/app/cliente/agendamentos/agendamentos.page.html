@@ -1,39 +1,30 @@
-
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="medium">
     <ion-buttons>
       <ion-button slot="end" (click)="fecharModal()">Fechar</ion-button>
       <ion-title>Agendamentos</ion-title>
-  </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="div">
+<ion-content color="dark">
+  <div *ngFor="let s of schedulings">
+    <ion-card *ngIf="s.client_id === 8">
+      <img src="assets/salaobarb.jpeg" />
+      <ion-card-header>
+        <ion-card-subtitle
+          >Você marcou uma visita para o dia {{s.date}} . Horário: {{s.hour}}.
+          Periodo: {{s.period}}
+        </ion-card-subtitle>
+        <ion-card-title>{{s.nameClient}}</ion-card-title>
+      </ion-card-header>
 
-<ion-card>
-  <img  src="assets/salaobarb.jpeg" />
-  <ion-card-header>
-    <ion-card-title>Barbeiro</ion-card-title>
-
-    <ion-card-subtitle>Você marcou uma visita para o dia 30/10/2023</ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-Estamos te aguardando no Senac de Nova Iguaçu. Até lá!!  </ion-card-content>
-</ion-card>
-
-<ion-card>
-  <img  src="assets/Salao2.png" />
-  <ion-card-header>
-    <ion-card-title>Beleza</ion-card-title>
-
-    <ion-card-subtitle>Você marcou uma visita para o dia 01/11/2023</ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-Estamos te aguardando no Instituto Enbelleze de Nova Iguaçu. Até lá!!  </ion-card-content>
-</ion-card>
-</div>
-
+      <ion-card-content>
+        Estamos te aguardando no Senac de Nova Iguaçu. Até lá!!
+      </ion-card-content>
+      <ion-button (click)="presentAlert()" class="align-center" color="dark">
+        Cancelar agendamento</ion-button
+      >
+    </ion-card>
+  </div>
 </ion-content>

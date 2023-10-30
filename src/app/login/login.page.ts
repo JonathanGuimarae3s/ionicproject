@@ -9,7 +9,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-
+  msg: any;
   datas = {
     email: '',
     password: '',
@@ -23,7 +23,12 @@ export class LoginPage {
       console.log(form.value)
 
       localStorage.setItem("client_id", '8');
+      this.router.navigate(['/tabs/tab1']);
+
       this.fecharModal();
+    }
+    else {
+      this.msg = "Dados iválidos"
     }
   }
   fecharModal(): void {

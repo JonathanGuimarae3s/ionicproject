@@ -11,7 +11,7 @@ import { AgendarbarbPage } from '../agendarbarb/agendarbarb.page';
   styleUrls: ['./agendar.page.scss'],
 })
 export class AgendarPage implements OnInit {
-
+  id = localStorage.getItem('client_id');
   cursos: any = [];
 
   isWeekday = (dateString: string) => {
@@ -32,13 +32,15 @@ export class AgendarPage implements OnInit {
 
   }
   agendar(curso: any) {
-    this.modalCtrl.create({
-componentProps:{"curso":curso},
-      component: AgendarbarbPage
-    }).then(modal=>{
-      modal.present();
-    }
+      this.modalCtrl.create({
+        componentProps: { "curso": curso },
+        component: AgendarbarbPage
+      }).then(modal => {
+        modal.present();
+      }
       )
+   
+
   }
 
   fecharModal(): void {

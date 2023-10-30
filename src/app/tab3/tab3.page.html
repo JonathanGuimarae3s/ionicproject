@@ -1,71 +1,71 @@
-<ion-content  >
-  <div class="div">
-  <div class="ion-background-color-dark">
-    <ion-header [translucent]="true">
-      <ion-toolbar color="dark">
-        <ion-title ><h1 class="t"> CLIENTE </h1></ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <div *ngIf="item">
-      <div class="central">
-        <img alt="" src="assets/icone.png" width="200px" />
-      </div>
-      <ion-list [inset]="true" class="div">
-        <ion-toolbar>
-          <ion-title class="t">Elias Santos</ion-title>
-        </ion-toolbar>
-        <ion-item>
-          <ion-icon
-            color="tertiary"
-            slot="start"
-            name="list-circle"
-            size="large"
-          ></ion-icon>
-          <ion-label>queissofera@elias.com</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon aria-hidden="true" name="call" slot="start"></ion-icon>
-          <ion-label>21 989551122</ion-label>
-        </ion-item>
-      </ion-list>
-      <br /><br />
-      <ion-list [inset]="true" class="div">
-        <ion-button expand="block" (click)="Agendamen()">Agendamentos</ion-button>
-        <ion-button expand="block" (click)="Novocu()">Novos Cursos</ion-button>
-        <ion-button expand="block" (click)="Cancel()">Cancelamentos</ion-button>
-        <ion-button expand="block" (click)="Lembre()">Lembretes</ion-button>
-        <!-- <ion-button expand="block" (click)="openSecondMenu()">Open Second Menu</ion-button>
-        <ion-button expand="block" (click)="openEndMenu()">Open End Menu</ion-button> -->
-      </ion-list>
-    </div>
-    <br /><br />
-    
-    <ion-footer>
-     
-      <ion-card >
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-button color="light " (click)="fecharModal()" slot="end"  >Voltar</ion-button
+    >
+    <ion-title><h1 class="t">CLIENTE</h1></ion-title>
+  </ion-toolbar>
+</ion-header>
 
-        <div id="card2">
+
+
+<ion-content color="dark">
+  <div *ngIf="!item">
+    <ion-card>
+      <div id="card2">
         <ion-card-header>
-          <ion-card-title ><h1><img src="assets/model22.png" alt="" width="250px"></h1> </ion-card-title>
+          <ion-card-title
+            ><h1><img src="assets/model22.png" alt="" width="250px" /></h1>
+          </ion-card-title>
         </ion-card-header>
       </div>
-      
-      
-      </ion-card>
-      <ion-grid>
-        <ion-row>
-          <ion-col></ion-col>
-          <ion-col push-sm="6" class="col">
-            <ion-button (click)="logar()">Logar</ion-button>
-          </ion-col>
-          <ion-col push-sm="6" class="col">
-            <ion-button (click)="cadastro()">Cadastre-se</ion-button>
-          </ion-col>
-          <ion-col></ion-col>
-        </ion-row>
-      </ion-grid>
-   
-    </ion-footer>
-  
-  </div></div>
+    </ion-card>
+    <ion-grid>
+      <div *ngIf="msg">
+        <p id="msg">{{msg}}</p>
+      </div>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col push-sm="6" class="col">
+          <ion-button (click)="logar()">Logar</ion-button>
+        </ion-col>
+        <ion-col push-sm="6" class="col">
+          <ion-button (click)="cadastro()">Cadastre-se</ion-button>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="item">
+    <div class="central">
+      <img alt="" src="assets/icone.png" width="200px" />
+    </div>
+    <ion-list [inset]="true" class="div">
+      <ion-toolbar>
+        <ion-title class="t">{{client.nameClient}}</ion-title>
+      </ion-toolbar>
+      <ion-item>
+        <ion-icon
+          color="tertiary"
+          slot="start"
+          name="list-circle"
+          size="large"
+        ></ion-icon>
+        <ion-label>{{client.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon aria-hidden="true" name="call" slot="start"></ion-icon>
+        <ion-label>{{client.phoneNumber}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <br /><br />
+    <ion-list [inset]="true" class="div">
+      <ion-button expand="block" (click)="Agendamen()">Agendamentos</ion-button>
+      <ion-button expand="block" (click)="Novocu()">Novos Cursos</ion-button>
+      <ion-button expand="block" (click)="Cancel()">Cancelamentos</ion-button>
+      <ion-button expand="block" (click)="Lembre()">Lembretes</ion-button>
+      <ion-button expand="block" (click)="sair()">Sair</ion-button>
+        <!-- <ion-button expand="block" (click)="openEndMenu()">Open End Menu</ion-button> -->
+    </ion-list>
+  </div>
+  <br /><br />
 </ion-content>

@@ -2,111 +2,87 @@
 
 <ion-content>
   <div class="div">
+    <ion-card>
+      <div id="card2">
+        <ion-card-header>
+          <ion-card-title
+            ><h1><img src="assets/model22.png" alt="" width="250px" /></h1>
+          </ion-card-title>
+        </ion-card-header>
+      </div>
+    </ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-card id="card1">
+          <h3></h3>
+          <h2></h2>
+          <div class="ion-text-center">
+            <img src="assets/barb.jpg" alt="" id="img1" />
+            <h3 class="titulo2"><b> Barbearia</b></h3>
+            <ion-button id="present-alert">Saiba Mais</ion-button>
 
-    
-    <ion-card >
-
-    <div id="card2">
-    <ion-card-header>
-      <ion-card-title ><h1><img src="assets/model22.png" alt="" width="250px"></h1> </ion-card-title>
-    </ion-card-header>
-  </div>
-  
-  
-  </ion-card>
-  <ion-row>
-    
-   <ion-col>
-     <ion-card id="card1">
-      <h3></h3>
-      <h2></h2>
-       <div class="ion-text-center">
-         <img src="assets/barb.jpg" alt="" id="img1">
-         <h3 class="titulo2"><b> Barbearia</b></h3>
-         <ion-button id="present-alert">Saiba Mais</ion-button>
-     
-         <ion-alert
-  trigger="present-alert"
-  header="Barbearia"
-  subHeader="Nesse app você poderá fazer agendamentos para usufruir dos serviços de Barbearia
+            <ion-alert
+              trigger="present-alert"
+              header="Barbearia"
+              subHeader="Nesse app você poderá fazer agendamentos para usufruir dos serviços de Barbearia
   das nossas instituições parceiras de forma totalmente gratuita"
-  [buttons]="alertButtons"
-  >
-</ion-alert>
+              [buttons]="alertButtons"
+            >
+            </ion-alert>
+          </div>
+          <h2></h2>
+          <h3></h3>
+        </ion-card>
+      </ion-col>
 
-
-        
-       </div>
-       <h2></h2>
-       <h3></h3>
-     </ion-card>
-   </ion-col>
- 
-   <ion-col>
-  
-     <ion-card id="card1" >
-      <h2></h2>
-      <h3></h3>
-       <div class="ion-text-center">
-         <img src="assets/mulher.jpg" alt="" id="img1">
-         <h3 class="titulo2"><b>Beleza</b></h3>
-         <ion-button (click)="setOpen(true)">Saiba Mais</ion-button>
-         <ion-alert
-  [isOpen]="isAlertOpen"
-  header="Beleza Feminina"
-  subHeader="Nesse app você pode fazer agendamentos para usufruir dos serviços de Beleza Feminina
+      <ion-col>
+        <ion-card id="card1">
+          <h2></h2>
+          <h3></h3>
+          <div class="ion-text-center">
+            <img src="assets/mulher.jpg" alt="" id="img1" />
+            <h3 class="titulo2"><b>Beleza</b></h3>
+            <ion-button (click)="setOpen(true)">Saiba Mais</ion-button>
+            <ion-alert
+              [isOpen]="isAlertOpen"
+              header="Beleza Feminina"
+              subHeader="Nesse app você pode fazer agendamentos para usufruir dos serviços de Beleza Feminina
   das nossas instituições parceiras de forma totalmente gratuita"
-  
-  [buttons]="alertButons"
-  (didDismiss)="setOpen(false)"
-></ion-alert>
+              [buttons]="alertButons"
+              (didDismiss)="setOpen(false)"
+            ></ion-alert>
 
-         <h3></h3>
-         <h2></h2>
-       </div>
-       
-     </ion-card>
-   </ion-col>
-
-  </ion-row>
-  <div class="fundo">
-    
-      
+            <h3></h3>
+            <h2></h2>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
     <div class="fundo">
-      <h2 class="titulo"><b>Empresas Parceiras</b></h2>
+      <div class="fundo">
+        <h2 class="titulo"><b>Empresas Parceiras</b></h2>
+      </div>
     </div>
-  
-
-</div>
-
-
-  <ion-card class="div" >
-    <ion-grid class="div2" >
-      <div id="card3">
-      <ion-row >
-        <ion-col push-sm="6" class="col" ><img src="assets/senac-logo.png" alt="" width="100px">
-        <br>
-        </ion-col>
-        <ion-col push-sm="6" class="col"><img src="assets/logo_casamenor2.png" alt="" width="130px"></ion-col>
-        <br>
-      </ion-row>
-      <ion-row>
-        <ion-col push-sm="12" class="col"><img src="assets/logo_embelleze.avif" alt="" width="150px"></ion-col>
-      </ion-row>
-    </div>
-     
-    </ion-grid>
-    
-  </ion-card>
-
-
-    
-</div>
-
+    <ion-card class="div">
+      <ion-grid class="div2">
+        <div id="card3">
+          <ion-row>
+            <ion-col push-sm="6" class="col"
+              ><img src="assets/senac-logo.png" alt="" width="100px" />
+              <br />
+            </ion-col>
+            <ion-col push-sm="6" class="col"
+              ><img src="assets/logo_casamenor2.png" alt="" width="130px"
+            /></ion-col>
+            <br />
+          </ion-row>
+          <ion-row>
+            <ion-col push-sm="12" class="col"
+              ><img src="assets/logo_embelleze.avif" alt="" width="150px"
+            /></ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+    </ion-card>
+  </div>
 </ion-content>
-
- 
-   
-
-
-

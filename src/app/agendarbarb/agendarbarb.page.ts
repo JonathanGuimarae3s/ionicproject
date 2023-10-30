@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NavParams, ToastController } from '@ionic/angular';
+import { AlertController, NavParams, ToastController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { SchedulingService } from '../models/service/scheduling.service';
@@ -23,7 +23,7 @@ export class AgendarbarbPage implements OnInit {
     confirmationCode: '',
   }
 
-  constructor(private modalCtrl: ModalController, private toastCtrl: ToastController, private navParams: NavParams, private service: SchedulingService, private route: Router) {
+  constructor(private alertController: AlertController, private modalCtrl: ModalController, private toastCtrl: ToastController, private navParams: NavParams, private service: SchedulingService, private route: Router) {
     this.datas = this.navParams.get('curso')
   }
 
@@ -58,10 +58,10 @@ export class AgendarbarbPage implements OnInit {
     this.scheduling.lesson_id = this.datas.id;
     this.scheduling.confirmationCode = this.generateConfirmationCode(5);
     this.scheduling.client_id = localStorage.getItem('client_id');
-    console.log(this.scheduling)
     this.service.insert(this.scheduling).subscribe(response => {
-      this.route.navigate
     })
+    this.presentAlert();
+
 
   }
 
@@ -78,6 +78,21 @@ export class AgendarbarbPage implements OnInit {
     return code;
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Agendamento Marcado',
+      subHeader: 'Confira seu E-mail para comfirmar a data e o horário',
+
+      buttons: ['OK'],
+    });
+
+    await alert.present().then(modal => {
+      this.fecharModal();
+
+    });
+
+
+  }
 
 
 }
